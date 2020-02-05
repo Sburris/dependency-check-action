@@ -4,7 +4,7 @@ runs:
     using: 'docker'
     image: 'docker://owasp/dependency-check:latest'
     args:
-        - '--scan %GITHUB_WORKSPACE%'
+        - '--scan {{ github.workspace }}'
         - '--format "ALL"'
-        - '--project %GITHUB_REPOSITORY%'
+        - '--project {{ github.repository }}'
         - '--out /github/workspace/reports'
