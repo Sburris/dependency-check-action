@@ -14,10 +14,10 @@ runs:
     image: 'docker://owasp/dependency-check:latest'
     args:
         - '--scan'
-        - '${{ input.Source-Location }}'
+        - '${{ inputs.Source-Location }}'
         - '--format' 
         - ' "ALL"'
         - '--project'
-        - '${{ input.Project-Name }}'
+        - '${{ inputs.Project-Name }}'
         - '--out'
-        - '${{ input.Report-Location }}'
+        - '${{ inputs.Report-Location }}'
