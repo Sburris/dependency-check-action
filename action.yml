@@ -16,7 +16,7 @@ runs:
         - '--scan'
         - '${{ inputs.Source-Location }}'
         - '--format' 
-        - ' "ALL"'
+        - 'ALL'
         - '--project'
         - '${{ inputs.Project-Name }}'
         - '--out'
