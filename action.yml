@@ -2,7 +2,7 @@ name: 'Dependency Check scan'
 description: 'Runs dependency check on checked out code.'
 runs:
     using: 'docker'
-    image: 'owasp/dependency-check:latest'
+    image: 'docker://owasp/dependency-check:latest'
     args:
         - '--scan $GITHUB_WORKSPACE'
         - '--format "ALL"'
