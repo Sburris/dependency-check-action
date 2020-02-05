@@ -22,4 +22,4 @@ runs:
         - '--out'
         - '${{ inputs.Report-Location }}'
         - '--log'
-        - '${{ inputs.Report-Location }}'
+        - '${{ inputs.Report-Location }}/log.txt'
