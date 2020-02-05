@@ -11,7 +11,7 @@ inputs:
         default: '/github/workspace/reports'
 runs:
     using: 'docker'
-    image: 'docker://owasp/dependency-check:latest'
+    image: 'docker://sburris/dependency-check-docker:5.3'
     args:
         - '--scan'
         - '${{ inputs.Source-Location }}'
