@@ -1,14 +1,20 @@
 name: 'Dependency Check scan'
 description: 'Runs dependency check on checked out code.'
 inputs:
-    Source-Location:
-        required: false
-        default: '/github/workspace'
     Project-Name:
         required: true
+    Source-Location:
+        required: false
+        default: '/github/workspace'    
+    Report-Format:
+        required: false
+        default: 'ALL'
     Report-Location:
         required: false
         default: '/github/workspace/reports'
+    Log-Name:
+        required: false
+        default: log.txt
 runs:
     using: 'docker'
     image: 'docker://sburris/dependency-check-docker:5.3'
@@ -16,10 +22,10 @@ runs:
         - '--scan'
         - '${{ inputs.Source-Location }}'
         - '--format' 
-        - 'ALL'
+        - '${{ inputs.Report-Format }}'
         - '--project'
         - '${{ inputs.Project-Name }}'
         - '--out'
         - '${{ inputs.Report-Location }}'
         - '--log'
-        - '${{ inputs.Report-Location }}/log.txt'
+        - '${{ inputs.Report-Location }}/${{ inputs.Log-Name }}'
