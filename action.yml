@@ -1,14 +1,23 @@
 name: 'Dependency Check scan'
 description: 'Runs dependency check on checked out code.'
+inputs:
+    Source-Location:
+        required: false
+        default: '/github/workspace'
+    Project-Name:
+        required: true
+    Report-Location:
+        required: false
+        default: '/github/workspace/reports'
 runs:
     using: 'docker'
     image: 'docker://owasp/dependency-check:latest'
     args:
         - '--scan'
-        - '${{ github.workspace }}'
+        - '${{ input.Source-Location }}'
         - '--format' 
         - ' "ALL"'
         - '--project'
-        - '${{ github.repository }}'
+        - '${{ input.Project-Name }}'
         - '--out'
-        - '/github/workspace/reports'
+        - '${{ input.Report-Location }}'
