@@ -5,10 +5,10 @@ runs:
     image: 'docker://owasp/dependency-check:latest'
     args:
         - '--scan'
-        - '{{ github.workspace }}'
+        - '${{ github.workspace }}'
         - '--format' 
         - ' "ALL"'
         - '--project'
-        - '{{ github.repository }}'
+        - '${{ github.repository }}'
         - '--out'
         - '/github/workspace/reports'
