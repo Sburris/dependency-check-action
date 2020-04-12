@@ -1,8 +1,8 @@
 # Introduction
 
- This action wraps the [OWASP Dependency Check](https://owasp.org/www-project-dependency-check/) scanning tool hosted in an unofficial docker image.
+ This action creates a docker image containing the [OWASP Dependency Check](https://owasp.org/www-project-dependency-check/) scanning tool.
 
- *NOTE: The official docker image cannot be used in Github Actions because it does not run as the **root** user.*
+ *NOTE: The official docker image cannot be used in Github Actions because it does not run as the **root** user. This is needed because Github Actions mount folders into the image that are not accounted for in the official OWASP Dependency Check docker image and therefore do not have permissions to those folders.*
 
 ## Usage
 
