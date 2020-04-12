@@ -17,7 +17,7 @@ inputs:
         default: log.txt
 runs:
     using: 'docker'
-    image: 'docker://sburris/dependency-check-docker:5.3'
+    image: 'Dockerfile'
     args:
         - '--scan'
         - '${{ inputs.Source-Location }}'
