@@ -9,7 +9,7 @@ ENV JAVA_OPTS=-Danalyzer.assembly.dotnet.path=/usr/bin/dotnet -Danalyzer.bundle.
 
 COPY --from=jlink /jlinked /opt/jdk/
 
-RUN wget -O /tmp/current.txt https://jeremylong.github.io/DependencyCheck/current.txt && current=$(cat /tmp/current.txt) && wget https://dl.bintray.com/jeremy-long/owasp/dependency-check-$current-release.zip && unzip dependency-check-$current-release.zip && mv dependency-check /usr/share/
+RUN wget -O /tmp/current.txt https://jeremylong.github.io/DependencyCheck/current.txt && current=$(cat /tmp/current.txt) && wget https://github.com/jeremylong/DependencyCheck/releases/download/v${current}/dependency-check-${current}-release.zip && unzip dependency-check-${current}-release.zip && mv dependency-check /usr/share/
 
 VOLUME "/src"
 VOLUME "/reports"
